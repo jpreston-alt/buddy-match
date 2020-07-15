@@ -1,6 +1,7 @@
 import React from "react";
 import Card from "./Card";
-import API from "../utils/API";
+import API from "../../utils/API";
+import data from "../../utils/seedData";
 require("dotenv");
 
 const style = {
@@ -9,52 +10,6 @@ const style = {
         margin: "100px auto 100px auto"
     }
 };
-
-const data = [
-    {
-        name: "Bug",
-        age: "Adult",
-        breed: "Chiuhuahua",
-        gender: "Male",
-        location: "Seattle, WA"
-    },
-    {
-        name: "Macie",
-        age: "Puppy",
-        breed: "Chiuhuahua",
-        gender: "Female",
-        location: "Safety Harbor, FL"
-    },
-    {
-        name: "Bear",
-        age: "Adult",
-        breed: "Chiuhuahua",
-        gender: "Male",
-        location: "Waynesville, MO"
-    },
-    {
-        name: "Bug",
-        age: "Adult",
-        breed: "Chiuhuahua",
-        gender: "Male",
-        location: "Seattle, WA"
-    },
-    {
-        name: "Macie",
-        age: "Puppy",
-        breed: "Chiuhuahua",
-        gender: "Female",
-        location: "Safety Harbor, FL"
-    },
-    {
-        name: "Bear",
-        age: "Adult",
-        breed: "Chiuhuahua",
-        gender: "Male",
-        location: "Waynesville, MO"
-    },
-
-]
 
 class CardContainer extends React.Component {
     // constructor(props) {
@@ -66,13 +21,8 @@ class CardContainer extends React.Component {
     //     };
     // }
 
-    componentDidMount() {
-        API.getAll().then(res => console.log(res));
-    };
     // componentDidMount() {
-    //     fetch("https://api.petfinder.com/v2/animals?type=dog&page=2", {
-    //         method: "GET",
-    //     })
+    //     API.getAll()
     //         .then(res => res.json())
     //         .then(
     //             (result) => {

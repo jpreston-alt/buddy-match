@@ -1,6 +1,6 @@
 import React from "react";
-import CardContainer from "../components/CardContainer";
-import Cover from "../components/Cover";
+import CardContainer from "./CardContainer";
+import Cover from "./Cover";
 
 class SearchPage extends React.Component {
     render() {
