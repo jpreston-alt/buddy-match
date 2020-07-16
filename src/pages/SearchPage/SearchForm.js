@@ -20,7 +20,7 @@ function SearchForm(props) {
                 <div className="uk-width-1-3 uk-margin">
                     <label className="uk-form-label">Age</label>
                     <div className="uk-form-controls">
-                        <select class="uk-select" id="form-horizontal-select">
+                        <select className="uk-select" id="form-horizontal-select">
                             <option value="">Please select...</option>
                             <option value="1">Puppy</option>
                             <option value="2">Adult</option>

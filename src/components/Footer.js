@@ -9,7 +9,7 @@ const style = {
     },
 
     footer: {
-        backgroundColor: "rgba(102, 227, 152)",
+        backgroundColor: "#90EFB6",
         color: "white",
         padding: "15px",
         fontWeight: "100"

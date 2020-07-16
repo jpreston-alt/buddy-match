@@ -6,10 +6,10 @@ class Card extends React.Component {
         return (
             <div className="uk-text-center">
                 <div className="uk-card uk-card-default">
-                    <div class="uk-card-media-top uk-cover-container">
+                    <div className="uk-card-media-top uk-cover-container">
                         <img src={this.props.pic} alt="" uk-cover="true" />
                         <canvas width="300" height="400"></canvas>
-                        <div class="uk-overlay uk-light uk-position-bottom btn-overlay">
+                        <div className="uk-overlay uk-light uk-position-bottom btn-overlay">
                             <button className="icon-btn left-btn"><span uk-icon="icon: info; ratio: 1.25"></span></button>
                             <button className="icon-btn right-btn"><span uk-icon="icon: heart; ratio: 1.25"></span></button>
                         </div>

@@ -1,6 +1,68 @@
-body {
-    background-image: url("../../images/bw-dog.jpg");  
+#home-pic {
+    background-image: url("../../images/bw-dog.jpg");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.title {
+    font-family: 'Pacifico', cursive !important;
+    font-size: 60px;
+    color: #90EFB6;
+    margin-bottom: 0px !important;
+}
+
+.home-subtitle {
+    margin-top: 0px;
+    float: right;
+    font-family: 'Roboto', sans-serif !important;
+    text-transform: uppercase;
+    color: #999;
+    font-weight: 100;
+    padding-right: 60px;
+    letter-spacing: 1px;
+    font-size: 14px;
+}
+
+.title-div {
+    float: right;
+    padding-right: 13%;
+    padding-top: 6%;
+}
+
+.cover-div {
+    background-color: rgba(255, 255, 255, 0.514);
+    height: 800px;
+    width: 100%;
+}
+
+.about-div {
+    background-color: rgba(255, 255, 255, 0.918);
+    width: 100%;
+}
+
+.about-hr {
+    width: 25px;
+    margin: 40px auto 50px auto;
+    background-color: rgba(144, 239, 182, 0.589);
+    height: 2px;
+    border: none;
+}
+
+@media only screen and (max-width: 550px) {
+    .title-div {
+        padding-right: 0px !important;
+        padding-top: 30%;
+        float: none;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 45px;
+    }
+
+    .home-subtitle {
+        padding-right: 5%;
+        font-size: 13px;
+    }
 }

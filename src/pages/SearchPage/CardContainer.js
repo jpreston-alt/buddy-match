@@ -1,7 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import API from "../../utils/API";
-import data from "../../utils/seedData";
 require("dotenv");
 
 const style = {
@@ -25,6 +23,8 @@ function CardContainer(props) {
                                 gender={el.gender}
                                 location={el.contact.address.city + ", " + el.contact.address.state}
                                 pic={el.photos[0].large}
+                                key={props.dogs.id}
+                                id={props.dogs.id}
                             />
                         }
                     })

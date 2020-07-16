@@ -6,7 +6,7 @@ export default {
             method: "GET",
             url: "https://api.petfinder.com/v2/animals?type=dog&page=2&limit=100",
             headers: {
-
+                "Authorization": `Bearer `
             }
         })
     }

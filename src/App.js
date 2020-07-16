@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage";
 import MatchPage from "./pages/MatchPage";
 import DonatePage from "./pages/DonatePage";
 import Footer from "./components/Footer";
+import ContactCanvas from "./components/ContactCanvas/index";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route exact path="/match" component={MatchPage} />
       <Route exact path="/search" component={SearchPage} />
       <Route exact path="/donate" component={DonatePage} />
+      <ContactCanvas />
       <Footer />
     </Router>
   );
