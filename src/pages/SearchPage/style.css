@@ -1,0 +1,51 @@
+.uk-overlay {
+    width: 100%;
+    text-align: center;
+}
+
+.search-box {
+    width: 85%;
+    background-color: #90EFB6;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    border-radius: 20px;
+}
+
+.overlay {
+    background-color: rgba(102, 227, 152, 0.92)
+}
+
+.header {
+    color: white;
+}
+
+.uk-margin {
+    margin-top: 10px !important;
+    margin-bottom: 25px !important;
+}
+
+label {
+    text-transform: uppercase;
+    color: white !important;
+}
+
+input, select {
+    border: none !important;
+    border-radius: 12px !important;
+    font-size: 14px !important;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-box {
+    margin-top: 0px;
+  }
+
+  .header {
+      font-size: 1.75rem;
+  }
+
+  .search-box {
+      width: 100%;
+  }
+}
