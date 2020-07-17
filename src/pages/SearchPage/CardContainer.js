@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./Card";
+import Card from "./Card/index";
 require("dotenv");
 
 const style = {
@@ -12,7 +12,7 @@ const style = {
 function CardContainer(props) {
     return (
         <div style={style.container}>
-            <div className="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-match" uk-grid="true">
+            <div className="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-match" uk-grid="true" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 250; repeat: true">
                 {
                     props.dogs.map(el => {
                         if (el.photos[0] !== undefined) {

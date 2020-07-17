@@ -1,6 +1,5 @@
 import React from "react";
 import Navbar from "../../components/Navbar"
-import SearchForm from "./SearchForm";
 import "./style.css";
 
 function Cover(props) {
@@ -12,9 +11,9 @@ function Cover(props) {
                     <Navbar color={"white"} />
                 </div>
                 <div className="uk-overlay uk-position-center">
-                    <h1 className="header">Find Your Perfect Buddy</h1>
+                    <h1 className="header">{props.header}</h1>
                     <div className="search-box">
-                        <SearchForm />
+                        {props.searchForm}
                     </div>
                 </div>
             </div>

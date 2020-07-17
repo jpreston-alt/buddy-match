@@ -4,7 +4,7 @@ import "./style.css";
 import SearchPage from "./pages/SearchPage";
 import HomePage from "./pages/HomePage";
 import MatchPage from "./pages/MatchPage";
-import DonatePage from "./pages/DonatePage";
+import OrganizationPage from "./pages/OrganizationPage";
 import Footer from "./components/Footer";
 import ContactCanvas from "./components/ContactCanvas/index";
 
@@ -15,7 +15,7 @@ function App() {
       <Route exact path="/" component={HomePage} />
       <Route exact path="/match" component={MatchPage} />
       <Route exact path="/search" component={SearchPage} />
-      <Route exact path="/donate" component={DonatePage} />
+      <Route exact path="/donate" component={OrganizationPage} />
       <ContactCanvas />
       <Footer />
     </Router>

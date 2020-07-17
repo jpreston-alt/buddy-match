@@ -14,3 +14,11 @@ h1, h2, h3, h4, h5, h6 {
 .uk-offcanvas-bar {
     background-color: #2c3e50f1;
 }
+
+.uk-icon {
+    padding: 5px;
+}
+/* 
+a {
+    color: #90EFB6;
+} */

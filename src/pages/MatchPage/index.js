@@ -8,7 +8,7 @@ class MatchPage extends React.Component {
             <div>
                 <Navbar />
                 <div className="uk-container uk-text-center quiz-container">
-                    <h1 className="quiz-heading">Buddy Match Quiz Coming Soon :)</h1>
+                    <h2 className="quiz-heading">Buddy Match Quiz Coming Soon <span uk-icon="happy"></span></h2>
                 </div>
             </div>
         )

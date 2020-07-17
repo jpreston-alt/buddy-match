@@ -1,0 +1,29 @@
+.uk-overlay {
+    text-align: center;
+}
+
+.search-box {
+    background-color: #90EFB6;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    border-radius: 20px;
+}
+
+.overlay {
+    background-color: rgba(102, 227, 152, 0.92)
+}
+
+.header {
+    color: white;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+      font-size: 1.75rem;
+  }
+
+  .search-box {
+      margin-top: 0px;
+  }
+}
