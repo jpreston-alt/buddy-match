@@ -10,15 +10,14 @@ import ContactCanvas from "./components/ContactCanvas/index";
 
 function App() {
   return (
-
-    <Router>
+    < Router >
       <Route exact path="/" component={HomePage} />
       <Route exact path="/match" component={MatchPage} />
       <Route exact path="/search" component={SearchPage} />
       <Route exact path="/donate" component={OrganizationPage} />
       <ContactCanvas />
       <Footer />
-    </Router>
+    </Router >
   );
 }
 

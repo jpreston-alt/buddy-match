@@ -1,10 +1,7 @@
 import axios from "axios";
 
-const token = ``
-
-
 export default {
-    getOrganizations: function () {
+    getOrganizations: function (token) {
         return axios({
             method: "GET",
             url: "https://api.petfinder.com/v2/organizations",
@@ -14,7 +11,7 @@ export default {
         })
     },
 
-    getAll: function () {
+    getAll: function (token) {
         return axios({
             method: "GET",
             url: "https://api.petfinder.com/v2/animals?type=dog&page=2&limit=100",
