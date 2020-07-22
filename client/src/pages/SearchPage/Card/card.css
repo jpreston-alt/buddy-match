@@ -24,10 +24,12 @@
 
 .left-btn {
     margin-right: 30%;
+    margin-bottom: 15px !important;
 }
 
 .right-btn {
     margin-left: 30%;
+    margin-bottom: 15px !important;
 }
 
 hr {

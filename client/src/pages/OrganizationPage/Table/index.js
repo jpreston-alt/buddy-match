@@ -5,7 +5,7 @@ import "./style.css";
 function Table(props) {
     return (
         <div className="uk-card-default">
-            <table class="uk-table uk-table-divider uk-text-center">
+            <table className="uk-table uk-table-divider uk-text-center">
                 <thead>
                     <tr>
                         <th>Organization</th>
@@ -22,6 +22,7 @@ function Table(props) {
                                 email={el.email}
                                 phone={el.phone}
                                 website={el.website}
+                                key={el.id}
                             />
                         })
                     }

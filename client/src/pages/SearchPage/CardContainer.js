@@ -27,6 +27,7 @@ function CardContainer(props) {
                                 id={props.dogs.id}
                             />
                         }
+                        return;
                     })
                 }
             </div>

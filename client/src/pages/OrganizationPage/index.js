@@ -3,8 +3,10 @@ import API from "../../utils/API";
 import Cover from "../../components/Cover";
 import SearchForm from "./SearchForm";
 import Table from "./Table";
+import TokenContext from "../../utils/TokenContext";
 
 class OrganizationPage extends React.Component {
+    static contextType = TokenContext;
 
     constructor(props) {
         super(props)
@@ -14,13 +16,15 @@ class OrganizationPage extends React.Component {
     }
 
     componentDidMount() {
-        API.getOrganizations()
+        const token = this.context;
+
+        API.getOrganizations(token)
             .then(res => {
                 this.setState({ organizations: res.data.organizations });
-                console.log(this.state);
             })
             .catch(err => console.log(err));
-    }
+    };
+
     render() {
         return (
             <div>

@@ -10,8 +10,14 @@ class Card extends React.Component {
                         <img src={this.props.pic} alt="" uk-cover="true" />
                         <canvas width="300" height="400"></canvas>
                         <div className="uk-overlay uk-light uk-position-bottom btn-overlay">
-                            <button className="icon-btn left-btn"><span uk-icon="icon: info; ratio: 1.25"></span></button>
-                            <button className="icon-btn right-btn"><span uk-icon="icon: heart; ratio: 1.25"></span></button>
+                            <div className="uk-grid uk-child-width-expand" uk-grid="true">
+                                <div>
+                                    <button className="icon-btn left-btn"><span uk-icon="icon: info; ratio: 1.25"></span></button>
+                                </div>
+                                <div>
+                                    <button className="icon-btn right-btn"><span uk-icon="icon: heart; ratio: 1.25"></span></button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div className="uk-card-body">
@@ -22,9 +28,6 @@ class Card extends React.Component {
                         <p className="subtitle">
                             {this.props.age} &nbsp;-&nbsp; {this.props.breed}
                         </p>
-                        {/* <p style={style.subtitle}>
-                                {this.props.gender}
-                            </p> */}
                         <p className="subtitle">
                             {this.props.location}
                         </p>
