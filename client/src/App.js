@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import ContactCanvas from "./components/ContactCanvas/index";
 import TokenContext from "./utils/TokenContext";
 import ApiToken from "./utils/ApiToken";
+import MobileMenu from "./components/Navbar/MobileMenu";
 
 class App extends React.Component {
   constructor(props) {
@@ -55,6 +56,7 @@ class App extends React.Component {
           <Route exact path="/search" component={SearchPage} />
           <Route exact path="/donate" component={OrganizationPage} />
           <ContactCanvas />
+          <MobileMenu />
           <Footer />
         </Router >
       </TokenContext.Provider>

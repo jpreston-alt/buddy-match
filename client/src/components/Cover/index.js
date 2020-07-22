@@ -1,5 +1,6 @@
 import React from "react";
-import Navbar from "../../components/Navbar"
+import Navbar from "../../components/Navbar/index";
+import HR from "../../components/HR";
 import "./style.css";
 
 function Cover(props) {
@@ -8,7 +9,7 @@ function Cover(props) {
             <div className="uk-inline">
                 <img src="./images/lake.jpg" alt="" />
                 <div className="uk-overlay-default uk-position-cover overlay">
-                    <Navbar color={"white"} />
+                    <Navbar color={"white"} hoverColor={"blue-hover"} />
                 </div>
                 <div className="uk-overlay uk-position-center">
                     <h1 className="header">{props.header}</h1>

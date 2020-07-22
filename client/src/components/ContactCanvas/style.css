@@ -7,6 +7,14 @@
     font-family: 'Roboto', sans-serif !important;
 }
 
+.contact-li:hover {
+    color: #60da98 !important;
+}
+
 .contact-icon {
     color: rgb(228, 228, 228) !important;
+}
+
+#contact-title {
+    color: white !important;
 }

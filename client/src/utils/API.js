@@ -9,11 +9,31 @@ export default {
         });
     },
 
+    getOrgsByLocation: function (token, zip) {
+        return axios.get("/api/findOrgs/", {
+            params: {
+                token: token,
+                location: zip
+            }
+        });
+    },
+
     getAll: function (token) {
         return axios.get("/api/findAllPets", {
             params: {
                 token: token
             }
         });
-    }
+    },
+
+    searchDogs: function (token, location, breed, age) {
+        return axios.get("/api/searchDogs", {
+            params: {
+                token: token,
+                location: location,
+                breed: breed,
+                age: age
+            }
+        });
+    },
 };

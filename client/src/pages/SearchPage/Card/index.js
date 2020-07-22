@@ -1,4 +1,5 @@
 import React from "react";
+import HR from "../../../components/HR";
 import "./card.css";
 
 class Card extends React.Component {
@@ -24,7 +25,7 @@ class Card extends React.Component {
                         <h3 className="uk-card-title">
                             {this.props.name}
                         </h3>
-                        <hr />
+                        <HR color="#5ed9977a" />
                         <p className="subtitle">
                             {this.props.age} &nbsp;-&nbsp; {this.props.breed}
                         </p>

@@ -18,6 +18,10 @@
     color: white;
 }
 
+.blue-hover:hover {
+    color: #2c3e50 !important;
+}
+
 @media only screen and (max-width: 600px) {
   .header {
       font-size: 1.75rem;

@@ -13,4 +13,17 @@ router.get("/api/findAllOrgs", (req, res) => {
         .catch(err => console.log(err));
 });
 
+router.get("/api/findOrgs", (req, res) => {
+
+    axios({
+        method: "GET",
+        url: `https://api.petfinder.com/v2/organizations?location=${req.query.location}&limit=100`,
+        headers: {
+            "Authorization": `Bearer ${req.query.token}`
+        }
+    })
+        .then(data => res.send(data.data))
+        .catch(err => console.log(err));
+});
+
 module.exports = router;
