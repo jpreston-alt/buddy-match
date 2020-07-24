@@ -3,9 +3,6 @@ import "./style.css";
 import HR from "../../components/HR";
 
 function DogProfile(props) {
-    if (props.dog === {}) {
-        return <span>Loading...</span>;
-    }
 
     return (
         <div id="info-modal" className="uk-modal-full" uk-modal="true">

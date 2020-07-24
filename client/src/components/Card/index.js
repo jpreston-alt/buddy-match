@@ -1,20 +1,35 @@
-import React from "react";
+import React, { useContext } from "react";
 import HR from "../HR";
 import "./card.css";
+import API from "../../utils/API";
+import FavApi from "../../utils/FavApi";
+import TokenContext from "../../utils/TokenContext";
 
 function Card(props) {
+    const token = useContext(TokenContext);
 
     const handleSaveClick = (id) => {
-        console.log(props);
-        let favorites = JSON.parse(localStorage.getItem("favorites"));
-
-        if (favorites === null) {
-            favorites = [];
-        }
-
-        favorites.push(props);
-
-        localStorage.setItem("favorites", JSON.stringify(favorites));
+        API.getDog(token, id)
+            .then(res => {
+                let newPet = {
+                    name: res.data.name,
+                    photo: res.data.photos[0].large,
+                    age: res.data.age,
+                    email: res.data.contact.email,
+                    phone: res.data.contact.phone,
+                    gender: res.data.gender,
+                    status: res.data.status,
+                    breed: res.data.breeds.primary,
+                    location: `${res.data.contact.address.city}, ${res.data.contact.address.state}`,
+                    href: res.data.url,
+                    id: res.data.id
+                }
+                FavApi.addOne(newPet)
+                    .then(res => {
+                        console.log(res);
+                    })
+            })
+            .catch(err => console.log(err));
     };
 
     return (
