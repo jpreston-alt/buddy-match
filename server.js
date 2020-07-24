@@ -20,16 +20,16 @@ app.use(logger("dev"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password123@ds133340.mlab.com:33340/heroku_nmnd0rk9", { useNewUrlParser: true });
 
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-};
-
 // import API routes
 app.use(petRoutes);
 app.use(orgRoutes);
 app.use(tokenRoutes);
 app.use(favoritesRoutes);
+
+// Serve up static assets (usually on heroku)
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+};
 
 app.get("*", function (req, res) {
     res.sendFile(path.join(__dirname, "./client/build/index.html"));
