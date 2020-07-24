@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import SearchPage from "./pages/SearchPage";
@@ -13,61 +13,70 @@ import MobileMenu from "./components/Navbar/MobileMenu";
 import NoMatch from "./components/NoMatch";
 import SavedPage from "./pages/SavedPage";
 
-class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      token: JSON.parse(localStorage.getItem("token"))
-    };
-  }
+function App() {
+  const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
 
-  componentDidMount() {
-    this.setState({ token: JSON.parse(localStorage.getItem("token")) });
-    let currentTime = new Date().getTime();
+  useEffect(() => {
+    let getToken = JSON.parse(localStorage.getItem("token"));
 
-    console.log(`expires in: ${(this.state.token.expires - currentTime) / 60000} mins`);
+    if (getToken !== null) {
+      setToken(getToken);
+      let currentTime = new Date().getTime();
 
-    if (!this.state.token.expires || this.state.token.expires - currentTime < 1) {
-      this.getApiToken();
+      if (!token.expires || token.expires - currentTime < 1) {
+        getApiToken();
+      } else {
+        console.log(`expires in: ${(token.expires - currentTime) / 60000} mins`);
+      }
+
+    } else {
+      getApiToken();
     }
-  };
+  }, []);
 
-  getApiToken() {
+  const getApiToken = () => {
     ApiToken.getToken()
       .then(function (res) {
 
         console.log("new token generated :)");
 
-        let token = {
+        let newToken = {
           token: res.data.access_token,
           expires: new Date().getTime() + (res.data.expires_in * 1000),
           type: res.data.token_type
         };
 
-        localStorage.setItem("token", JSON.stringify(token));
+        localStorage.setItem("token", JSON.stringify(newToken));
+        setToken(newToken);
 
       }).catch(err => console.log(`token error: ${err}`))
   }
 
-  render() {
-    return (
-      <TokenContext.Provider value={this.state.token.token}>
-        < Router >
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/match" component={MatchPage} />
-            <Route exact path="/search" component={SearchPage} />
-            <Route exact path="/donate" component={OrganizationPage} />
-            <Route exact path="/saved" component={SavedPage} />
-            <Route component={NoMatch} />
-          </Switch>
-          <ContactCanvas />
-          <MobileMenu />
-          <Footer />
-        </Router >
-      </TokenContext.Provider>
-    );
-  }
+  return (
+    token !== null ? (
+      (
+        <TokenContext.Provider value={token.token}>
+          < Router >
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/match" component={MatchPage} />
+              <Route exact path="/search" component={SearchPage} />
+              <Route exact path="/donate" component={OrganizationPage} />
+              <Route exact path="/saved" component={SavedPage} />
+              <Route component={NoMatch} />
+            </Switch>
+            <ContactCanvas />
+            <MobileMenu />
+            <Footer />
+          </Router >
+        </TokenContext.Provider>
+      )
+    ) : (
+        <div className="uk-text-center">
+          <h5 style={{ margin: "100px auto 100px auto" }}>Loading...</h5>
+        </div>
+      )
+  )
 }
 
 export default App;
