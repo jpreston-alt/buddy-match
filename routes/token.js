@@ -15,7 +15,7 @@ router.get("/api/getToken", (req, res) => {
         }
     })
         .then(response => res.json(response.data))
-        .catch(err => res.send(err));
+        .catch(err => console.log(err));
 });
 
 module.exports = router;

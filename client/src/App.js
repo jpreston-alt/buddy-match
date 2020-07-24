@@ -14,10 +14,31 @@ import NoMatch from "./components/NoMatch";
 import SavedPage from "./pages/SavedPage";
 
 function App() {
-  const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
+  // const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
+
+  // useEffect(() => {
+  //   let getToken = JSON.parse(localStorage.getItem("token"));
+
+
+  //   if (getToken !== null) {
+  //     setToken(getToken);
+  //     let currentTime = new Date().getTime();
+
+  //     if (!token.expires || token.expires - currentTime < 1) {
+  //       getApiToken();
+  //     } else {
+  //       console.log(`expires in: ${(token.expires - currentTime) / 60000} mins`);
+  //     }
+
+  //   } else {
+  //     getApiToken();
+  //   }
+  // }, []);
+  const [token, setToken] = useState({});
 
   useEffect(() => {
     let getToken = JSON.parse(localStorage.getItem("token"));
+
 
     if (getToken !== null) {
       setToken(getToken);
@@ -46,7 +67,7 @@ function App() {
           type: res.data.token_type
         };
 
-        localStorage.setItem("token", JSON.stringify(newToken));
+        // localStorage.setItem("token", JSON.stringify(newToken));
         setToken(newToken);
 
       }).catch(err => console.log(`token error: ${err}`))
