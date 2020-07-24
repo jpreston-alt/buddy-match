@@ -4,7 +4,7 @@ import Card from "./Card/index";
 const style = {
     container: {
         width: "85%",
-        margin: "100px auto 100px auto"
+        margin: "100px auto 100px auto",
     }
 };
 

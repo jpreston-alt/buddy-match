@@ -18,9 +18,9 @@ function SearchForm(props) {
     };
 
     return (
-        <div className="uk-container">
-            <form className="uk-grid-small uk-margin" uk-grid="true" onSubmit={props.handleSubmit}>
-                <div className="uk-width-1-3">
+        <div className="uk-container" style={{ maxWidth: 800 }}>
+            <form className="uk-grid-medium" uk-grid="true" onSubmit={props.handleSubmit}>
+                <div className="uk-width-1-3@s">
                     <label className="uk-form-label">Location</label>
                     <div className="uk-form-controls">
                         <input
@@ -32,7 +32,7 @@ function SearchForm(props) {
                         />
                     </div>
                 </div>
-                <div className="uk-width-1-3">
+                <div className="uk-width-1-3@s">
                     <label className="uk-form-label">Breed</label>
                     <div className="uk-form-controls">
                         <input
@@ -54,7 +54,7 @@ function SearchForm(props) {
                         </datalist>
                     </div>
                 </div>
-                <div className="uk-width-1-3">
+                <div className="uk-width-1-3@s">
                     <label className="uk-form-label">Age</label>
                     <div className="uk-form-controls">
                         <select

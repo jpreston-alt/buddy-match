@@ -73,17 +73,14 @@ function SearchPage() {
         <div>
             <Cover
                 header="Find Your Perfect Buddy"
-                searchForm={<SearchForm
+            />
+            <div className="search-box uk-text-center">
+                <SearchForm
                     handleSubmit={handleSubmit}
                     handleInputChange={handleInputChange}
                     searchObj={searchObj}
-                />}
-            />
-            {/* <div className="uk-text-center filter-div uk-container">
-                <FilterBtn name={"98199"} />
-                <FilterBtn name={"Husky"} />
-                <FilterBtn name={"Adult"} />
-            </div> */}
+                />
+            </div>
             {dogState.length !== 0 ?
                 (<CardContainer dogs={dogState} handleInfoClick={handleInfoClick} />)
                 :

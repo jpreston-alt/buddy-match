@@ -2,14 +2,6 @@
     text-align: center;
 }
 
-.search-box {
-    background-color: #90EFB6;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
-    border-radius: 20px;
-}
-
 .overlay {
     background-color: rgba(102, 227, 152, 0.92)
 }
@@ -21,23 +13,21 @@
 .blue-hover:hover {
     color: #2c3e50 !important;
 }
+.white-hover:hover {
+    color: white !important;
+}
 
 @media only screen and (max-width: 600px) {
   .header {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
   }
 
-  .search-box {
-      margin-top: 0px;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .header {
-      font-size: 1.75rem;
+  .uk-overlay {
+      padding-left: 0px !important;
+      padding-right: 0px !important;
   }
 
-  .search-box {
-      margin-top: 0px;
+  .organization-input {
+      max-width: 250px;
   }
 }

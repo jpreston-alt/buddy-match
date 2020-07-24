@@ -39,13 +39,15 @@ function OrganizationPage() {
         <div>
             <Cover
                 header="Find Shelters and Rescues"
-                searchForm={<SearchForm
+            />
+            <div className="search-box uk-text-center">
+                <SearchForm
                     handleSubmit={handleSubmit}
                     handleInputChange={handleInputChange}
                     searchState={searchState}
-                />}
-            />
-            <div className="uk-container" style={{ margin: 75 }}>
+                />
+            </div>
+            <div className="uk-container" style={{ margin: 50 }}>
                 {orgState.length !== 0 ?
                     (<Table organizations={orgState} />)
                     :

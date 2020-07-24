@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import "./style.css"
-// import SearchBtn from "../../../components/SearchBtn";
 
 function SearchForm(props) {
     return (

@@ -16,11 +16,25 @@ router.get("/api/findAllPets", (req, res) => {
 router.get("/api/searchDogs", (req, res) => {
     let location, breed, age;
 
-    req.query.location ? location = `&location=${req.query.location}` : location = "";
-    req.query.breed ? location = breed = `&breed=${req.query.breed}` : breed = "";
-    req.query.age ? location = age = `&age=${req.query.age}` : age = "";
+    if (req.query.location.length === 0) {
+        location = "";
+    } else {
+        location = `&location=${req.query.location}`
+    }
 
-    let query = `${location}${breed}${age}`;
+    if (req.query.breed.length === 0) {
+        breed = "";
+    } else {
+        breed = `&breed=${req.query.breed}`
+    }
+
+    if (req.query.age.length === 0) {
+        age = "";
+    } else {
+        age = `&age=${req.query.age}`
+    }
+
+    let query = `${location}${breed}${age} `;
 
     axios({
         method: "GET",
