@@ -11,7 +11,7 @@ router.get("/api/getToken", (req, res) => {
         url: "https://api.petfinder.com/v2/oauth2/token",
         data: "grant_type=client_credentials&client_id=" + key + "&client_secret=" + secret,
         headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/problem+json'
         }
     })
         .then(response => res.json(response.data))
