@@ -55,21 +55,21 @@ function App() {
   return (
     // token !== null ? (
     //   (
-    // <TokenContext.Provider value={token.token}>
-    < Router >
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/match" component={MatchPage} />
-        <Route exact path="/search" component={SearchPage} />
-        <Route exact path="/donate" component={OrganizationPage} />
-        <Route exact path="/saved" component={SavedPage} />
-        <Route component={NoMatch} />
-      </Switch>
-      <ContactCanvas />
-      <MobileMenu />
-      <Footer />
-    </Router >
-    // </TokenContext.Provider>
+    <TokenContext.Provider value={"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiJ1QXFJZjFidW1tZjVlTXAzeE50dFp2cXRnSGFWcTRDeGhIZXdyUWV2YTROR0dIQlB1biIsImp0aSI6IjgzYTgxNzUyOGNjOGVkNjRmZmYyYWY3ODlmM2I1ZmI4NmRkNmY5MTk0Y2E4NzVjMDUyNzljODkyMmRiMDNjY2IyMGNjMzQ4Njk3ZDZiYmY5IiwiaWF0IjoxNTk1NjI2ODIwLCJuYmYiOjE1OTU2MjY4MjAsImV4cCI6MTU5NTYzMDQyMCwic3ViIjoiIiwic2NvcGVzIjpbXX0.pvaJok8lE8RjYBqQHl2IZUuqx7zDqyQeN6by3h2Ur4MSBnsplvlAD519hIaJX91AVE269S2GF7DkbHakyw4c5_ceukenN1O86yI3IN0ZLomgwY_WZOpuOFSVc33WqIkLj7pPQykKtaVf87q3tRx_GjcJq_VQq2pTmizzS5LN68lJ1QRM2IihOs2hJAZOmq3IWFHGLVgYv29lDrUvCc_a7iiNwhQiYC2cdrMC19C09LY1SsnoRgPTYt6fQVatnXPIFkBMn0jsORl6kKkLHJdox-yNwHfO_kpVKWqzPb-lvfxHOpZivpi45BDocK-3iOLST-OwIU2UJT2moYBA4YuQtw"}>
+      < Router >
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/match" component={MatchPage} />
+          <Route exact path="/search" component={SearchPage} />
+          <Route exact path="/donate" component={OrganizationPage} />
+          <Route exact path="/saved" component={SavedPage} />
+          <Route component={NoMatch} />
+        </Switch>
+        <ContactCanvas />
+        <MobileMenu />
+        <Footer />
+      </Router >
+    </TokenContext.Provider>
   )
   //   ) : (
   //       <div className="uk-text-center">
