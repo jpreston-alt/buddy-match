@@ -5,6 +5,7 @@ const key = process.env.PET_FINDER_API_KEY;
 const secret = process.env.PET_FINDER_API_SECRET;
 
 router.get("/api/getToken", (req, res) => {
+    console.log("getting token on the back end");
     axios({
         method: "POST",
         url: "https://api.petfinder.com/v2/oauth2/token",
