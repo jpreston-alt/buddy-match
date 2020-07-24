@@ -1,8 +1,13 @@
 import axios from "axios";
 
 export default {
-    getToken: function () {
+    getToken: function (key, secret) {
         console.log("getting token...");
-        return axios.get("/api/getToken");
+        return axios.get("/api/getToken", {
+            params: {
+                key: key,
+                secret: secret
+            }
+        })
     }
 };
