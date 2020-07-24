@@ -18,7 +18,7 @@ app.use(logger("dev"));
 
 // mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/buddy-match");
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://jpreston-alt:Llama&555@ds133340.mlab.com:33340/heroku_nmnd0rk9");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://user:password123@ds133340.mlab.com:33340/heroku_nmnd0rk9", { useNewUrlParser: true });
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
