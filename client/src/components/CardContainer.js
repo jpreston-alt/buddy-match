@@ -12,7 +12,7 @@ const style = {
 function CardContainer(props) {
     return (
         <div style={style.container}>
-            <div className="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-match" uk-grid="true" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 250; repeat: true">
+            <div className="uk-child-width-1-3@m uk-child-width-1-2@s uk-grid-match" uk-grid="true" uk-scrollspy="cls: uk-animation-fade; target: .uk-card; delay: 250; repeat: false">
                 {
                     props.dogs.map(el => {
                         if (el.photos[0] !== undefined) {
@@ -23,8 +23,9 @@ function CardContainer(props) {
                                 gender={el.gender}
                                 location={el.contact.address.city + ", " + el.contact.address.state}
                                 pic={el.photos[0].large}
-                                key={props.dogs.id}
-                                id={props.dogs.id}
+                                key={el.id}
+                                id={el.id}
+                                handleInfoClick={props.handleInfoClick}
                             />
                         }
                         return;

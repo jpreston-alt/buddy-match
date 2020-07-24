@@ -17,7 +17,7 @@ router.get("/api/findOrgs", (req, res) => {
 
     axios({
         method: "GET",
-        url: `https://api.petfinder.com/v2/organizations?location=${req.query.location}&limit=100`,
+        url: `https://api.petfinder.com/v2/organizations?location=${req.query.location}&limit=20`,
         headers: {
             "Authorization": `Bearer ${req.query.token}`
         }

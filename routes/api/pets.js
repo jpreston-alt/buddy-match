@@ -15,23 +15,10 @@ router.get("/api/findAllPets", (req, res) => {
 
 router.get("/api/searchDogs", (req, res) => {
     let location, breed, age;
-    if (req.query.location) {
-        location = `&location=${req.query.location}`
-    } else {
-        location = ""
-    }
 
-    if (req.query.breed) {
-        breed = `&breed=${req.query.breed}`
-    } else {
-        breed = ""
-    }
-
-    if (req.query.age) {
-        age = `&age=${req.query.age}`
-    } else {
-        age = ""
-    }
+    req.query.location ? location = `&location=${req.query.location}` : location = "";
+    req.query.breed ? location = breed = `&breed=${req.query.breed}` : breed = "";
+    req.query.age ? location = age = `&age=${req.query.age}` : age = "";
 
     let query = `${location}${breed}${age}`;
 
@@ -45,6 +32,32 @@ router.get("/api/searchDogs", (req, res) => {
         .then(data => res.send(data.data))
         .catch(err => console.log(err));
 });
+
+router.get("/api/getBreeds", (req, res) => {
+    axios({
+        method: "GET",
+        url: "https://api.petfinder.com/v2/types/dog/breeds",
+        headers: {
+            "Authorization": `Bearer ${req.query.token}`
+        }
+    })
+        .then(data => res.send(data.data.breeds))
+        .catch(err => console.log(err));
+});
+
+router.get("/api/getDog", (req, res) => {
+    axios({
+        method: "GET",
+        url: `https://api.petfinder.com/v2/animals/${req.query.id}`,
+        headers: {
+            "Authorization": `Bearer ${req.query.token}`
+        }
+    })
+        .then(data => res.send(data.data.animal))
+        .catch(err => console.log(err));
+});
+
+
 
 
 

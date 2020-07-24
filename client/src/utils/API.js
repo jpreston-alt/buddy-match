@@ -36,4 +36,21 @@ export default {
             }
         });
     },
+
+    getBreeds: function (token) {
+        return axios.get("/api/getBreeds", {
+            params: {
+                token: token,
+            }
+        });
+    },
+
+    getDog: function (token, id) {
+        return axios.get(`/api/getDog`, {
+            params: {
+                token: token,
+                id: id
+            }
+        });
+    },
 };

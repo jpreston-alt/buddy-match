@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./style.css";
 import SearchPage from "./pages/SearchPage";
 import HomePage from "./pages/HomePage";
@@ -10,6 +10,8 @@ import ContactCanvas from "./components/ContactCanvas/index";
 import TokenContext from "./utils/TokenContext";
 import ApiToken from "./utils/ApiToken";
 import MobileMenu from "./components/Navbar/MobileMenu";
+import NoMatch from "./components/NoMatch";
+import SavedPage from "./pages/SavedPage";
 
 class App extends React.Component {
   constructor(props) {
@@ -51,10 +53,14 @@ class App extends React.Component {
     return (
       <TokenContext.Provider value={this.state.token.token}>
         < Router >
-          <Route exact path="/" component={HomePage} />
-          <Route exact path="/match" component={MatchPage} />
-          <Route exact path="/search" component={SearchPage} />
-          <Route exact path="/donate" component={OrganizationPage} />
+          <Switch>
+            <Route exact path="/" component={HomePage} />
+            <Route exact path="/match" component={MatchPage} />
+            <Route exact path="/search" component={SearchPage} />
+            <Route exact path="/donate" component={OrganizationPage} />
+            <Route exact path="/saved" component={SavedPage} />
+            <Route component={NoMatch} />
+          </Switch>
           <ContactCanvas />
           <MobileMenu />
           <Footer />

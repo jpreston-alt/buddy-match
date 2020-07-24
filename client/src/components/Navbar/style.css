@@ -6,8 +6,12 @@
     background-color: transparent;
 }
 
-.nav-item:hover, .menu-icon:hover {
+.nav-item:hover {
     color: #60da98 !important;
+}
+
+.menu-icon:hover {
+    color: #2c3e50f1 !important;
 }
 
 .menu-icon {

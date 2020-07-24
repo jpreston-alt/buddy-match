@@ -4,6 +4,7 @@ import Cover from "../../components/Cover";
 import SearchForm from "./SearchForm";
 import Table from "./Table";
 import TokenContext from "../../utils/TokenContext";
+import NoRes from "../../components/NoRes";
 
 function OrganizationPage() {
     const token = useContext(TokenContext);
@@ -45,7 +46,11 @@ function OrganizationPage() {
                 />}
             />
             <div className="uk-container" style={{ margin: 75 }}>
-                <Table organizations={orgState} />
+                {orgState.length !== 0 ?
+                    (<Table organizations={orgState} />)
+                    :
+                    (<NoRes type={"an Organization"} />)
+                }
             </div>
         </div>
     )

@@ -17,9 +17,10 @@ function Navbar(props) {
                 <div className="uk-navbar-left">
                     <ul className="uk-navbar-nav uk-visible@m">
                         <li><Link to="/" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>About</Link></li>
-                        <li><Link to="/match" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>Match</Link></li>
+                        {/* <li><Link to="/match" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>Match</Link></li> */}
                         <li><Link to="/search" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>Search</Link></li>
                         <li><Link to="/donate" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>Shelters & Rescues</Link></li>
+                        <li><Link to="/saved" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>Saved</Link></li>
                         <li><a uk-toggle="target: #contact-canvas" className={`nav-item ${props.hoverColor}`} style={{ color: props.color }}>Contact</a></li>
                     </ul>
                     <a className="uk-hidden@m" href="#menu-canvas" uk-toggle="target: #menu-canvas"><span className="menu-icon"
