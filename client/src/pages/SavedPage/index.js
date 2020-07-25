@@ -24,7 +24,7 @@ function SavedPage(props) {
 
     return (
         <div>
-            <Cover header={"Your Saved Buddies"} />
+            <Cover header={"Your Favorite Buddies"} />
             {
                 dogState.length !== 0 ? (
                     <div className="saved-container">

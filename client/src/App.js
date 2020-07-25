@@ -39,8 +39,7 @@ function App() {
     ApiToken.getToken()
       .then(function (res) {
 
-        console.log("new token generated :)");
-        console.log(res);
+        console.log("new token generated");
 
         let newToken = {
           token: res.access_token,

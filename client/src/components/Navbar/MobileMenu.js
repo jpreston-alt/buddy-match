@@ -13,7 +13,7 @@ function MobileMenu(props) {
                     {/* <li><Link to="/match" className="nav-item mobile-nav-item" style={{ color: props.color }}>Match</Link></li> */}
                     <li><Link to="/search" className="nav-item mobile-nav-item" style={{ color: props.color }}>Search</Link></li>
                     <li><Link to="/donate" className="nav-item mobile-nav-item" style={{ color: props.color }}>Shelters & Rescues</Link></li>
-                    <li><Link to="/saved" className={`nav-item mobile-nav-item ${props.hoverColor}`} style={{ color: props.color }}>Saved</Link></li>
+                    <li><Link to="/saved" className={`nav-item mobile-nav-item ${props.hoverColor}`} style={{ color: props.color }}>Favorites</Link></li>
                     <li><a uk-toggle="target: #contact-canvas" className="nav-item mobile-nav-item" style={{ color: props.color }}>Contact</a></li>
                 </ul>
             </div>
