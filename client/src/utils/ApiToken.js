@@ -10,6 +10,8 @@ const secret = process.env.REACT_APP_PET_FINDER_API_SECRET;
 
 export default {
     getToken: function () {
+        console.log(key);
+        console.log(secret);
         return fetch('https://api.petfinder.com/v2/oauth2/token', {
             method: 'POST',
             body: 'grant_type=client_credentials&client_id=' + key + '&client_secret=' + secret,
