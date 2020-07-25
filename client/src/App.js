@@ -40,11 +40,12 @@ function App() {
       .then(function (res) {
 
         console.log("new token generated :)");
+        console.log(res);
 
         let newToken = {
-          token: res.data.access_token,
-          expires: new Date().getTime() + (res.data.expires_in * 1000),
-          type: res.data.token_type
+          token: res.access_token,
+          expires: new Date().getTime() + (res.expires_in * 1000),
+          type: res.token_type
         };
 
         localStorage.setItem("token", JSON.stringify(newToken));
