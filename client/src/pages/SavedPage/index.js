@@ -10,16 +10,26 @@ function SavedPage(props) {
     const [currentDog, setCurrentDog] = useState({});
 
     useEffect(() => {
-        FavApi.getAll()
-            .then(res => {
-                setDogState(res.data)
-            })
-            .catch(err => console.log(err))
+        getDogs();
     }, []);
 
     const handleInfoClick = (id) => {
         let dog = dogState.filter(el => el.id === id);
         setCurrentDog(dog[0]);
+    };
+
+    const getDogs = () => {
+        FavApi.getAll()
+            .then(res => {
+                setDogState(res.data)
+            })
+            .catch(err => console.log(err))
+    };
+
+    const handleDeleteClick = (id) => {
+        FavApi.deleteOne(id)
+            .then(() => getDogs())
+            .catch(err => console.log(err));
     };
 
     return (
@@ -41,6 +51,9 @@ function SavedPage(props) {
                                         key={el.id}
                                         id={el.id}
                                         handleInfoClick={handleInfoClick}
+                                        dbID={el._id}
+                                        page="saved"
+                                        handleDeleteClick={handleDeleteClick}
                                     />
                                 })
                             }

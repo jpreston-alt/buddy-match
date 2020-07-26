@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import HR from "../HR";
 import "./card.css";
 import API from "../../utils/API";
@@ -27,6 +27,7 @@ function Card(props) {
                 FavApi.addOne(newPet)
                     .then(res => {
                         console.log(res);
+                        alert(`${res.data.name} was added to your favorites!`);
                     })
             })
             .catch(err => console.log(err));
@@ -50,12 +51,23 @@ function Card(props) {
                                 </button>
                             </div>
                             <div>
-                                <button
-                                    className="icon-btn right-btn"
-                                    onClick={() => handleSaveClick(props.id)}
-                                >
-                                    <span uk-icon="icon: heart; ratio: 1.25"></span>
-                                </button>
+                                {
+                                    props.page === "search" ? (
+                                        <button
+                                            className="icon-btn right-btn"
+                                            onClick={() => handleSaveClick(props.id)}
+                                        >
+                                            <span uk-icon="icon: heart; ratio: 1.25"></span>
+                                        </button>
+                                    ) : (
+                                            <button
+                                                className="icon-btn right-btn"
+                                                onClick={() => props.handleDeleteClick(props.dbID)}
+                                            >
+                                                <span uk-icon="icon: close; ratio: 1.25"></span>
+                                            </button>
+                                        )
+                                }
                             </div>
                         </div>
                     </div>

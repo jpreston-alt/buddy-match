@@ -20,7 +20,6 @@ View deployed application [here](https://buddy-match-dotcom.herokuapp.com/).
 
 ## Directions for Continued Development
 * Currently, when a user saves a dog they save it to a MongoDB database that is shared by all users. So when they view favorited dogs they are viewing ALL the favorited dogs from the database. I plan on adding user authentication so the user can save their favorites to a personalized list.
-* Adding a delete button to the favorites list so the user can remove a dog from that list.
 * To the organziations page, I plan on adding a button where to user can click on a shelter or rescue and view all the adoptable dogs from that organization.
 * Error handling. Let a user know when their search wasn't valid or came back empty.
 

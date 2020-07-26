@@ -25,6 +25,8 @@ function CardContainer(props) {
                                 key={el.id}
                                 id={el.id}
                                 handleInfoClick={props.handleInfoClick}
+                                icon="icon: heart; ratio: 1.25"
+                                page="search"
                             />
                         }
                         return;
