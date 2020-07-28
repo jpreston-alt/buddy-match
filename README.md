@@ -6,6 +6,13 @@ This application is a work in progress and is my first attempt at a full MERN st
 
 View deployed application [here](https://buddy-match-dotcom.herokuapp.com/).
 
+<p float="left">
+<img src="./client/public/images/home.png" alt="Login Page Image" width="45%" style="margin: 10px;"/>
+<img src="./client/public/images/search.png" alt="Dashboard Image" width="45%" style="margin: 10px;"/><br>
+<img src="./client/public/images/profile.png" alt="Homepage Image" width="45%" style="margin: 10px;"/>
+<img src="./client/public/images/shelters.png" alt="Spending Page Image" width="45%" style="margin: 5px;"/><br>
+</p>
+
 # Technologies
 * MongoDB
 * Express
